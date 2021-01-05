@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+             margin: 1% 3% 0 3%;
+             background-color: white;
+        }
+        .navigation{
+            background-color: #17a2b8;
+            position: fixed;
+            width: 92vw;
+            display: flex;
+            flex-wrap: revert;
+            border: 2px solid black;
+            border-radius: 10px;
+            justify-content: center;
+            padding:0 10px 0 15px;
+        }
+        .navigation .brand{
+            cursor: pointer;
+            margin-right: auto;
+        }
+        .navigation .nav{
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+        .navigation .nav table tr th{
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            padding:15px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .navigation .buttons{
+            border: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation .buttons button{
+            font-weight: bold;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            margin: 0 10px 0 0;
+            color: whitesmoke;
+            background-color: #001546;
+            padding: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .navigation .buttons button:hover{
+            background-color: #161d69;
+            outline: none;
+        }
+        #home{
+            display: flex;
+            background-color: #17a2b8;
+        }
+
+    </style>
+</head>
+<body>
+{#            <li role="presentation"><button onclick="redirect('/instructor')">Instructor</button></li>#}
+{#<a class="nav-link" onclick="redirect('/student')">STUDENT</a>#}
+<div class="navigation">
+    <div class="brand">
+        <h2><a onclick="redirect('/')">GNOSIS</a></h2>
+    </div>
+    <div class="nav">
+        <table>
+            <tr>
+            <th>HOME</th>
+            <th>ABOUT</th>
+            <th>CONTACT</th>
+            </tr>
+        </table>
+    </div>
+    <div class="buttons">
+        <button onclick="redirect('/instructor')">INSTRUCTOR</button>
+        <button onclick="redirect('/student')">STUDENT</button>
+    </div>
+
+</div>
+<div class="main">
+    <div id="home">
+    </div>
+</div>
+    <script>
+    function redirect(url) {
+        window.open(url,"_self");
+    }
+</script>
+</body>
+</html>

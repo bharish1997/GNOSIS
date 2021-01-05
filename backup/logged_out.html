@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+
+{% block breadcrumbs %}<div class="breadcrumbs" style="
+        text-align: center;
+        font-size: 22px;">
+
+    <a onclick="redirect('/')">{% trans 'Home' %}</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div style="text-align: center">
+    <style>
+        p{
+            font-size: 22px;
+        }
+        button{
+            background-color: #17a2b8;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+<p>{% trans "Thanks You." %}</p>
+
+<p><button onclick="redirect('/admin')">{% trans 'Log in again' %}</button></p>
+</div>
+<script>
+    function redirect(url) {
+        window.open(url,"_self");
+    }
+
+</script>
+{% endblock %}

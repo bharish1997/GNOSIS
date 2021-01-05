@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'logout' %}">LOGOUT</a>
+<div class="container">
+    {% for course in allcourses %}
+        <h1 style="text-align: center">{{ course.title }}</h1>
+        {{ course.description }}
+        <div class="embed-responsive embed-responsive-4by3">
+{#        <iframe width="560" height="315" src="https://www.youtube.com/embed/pWbMrx5rVBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
+        <video width="560" height="auto" controls>
+        <source src="{{ course.video.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+        </div>
+
+
+    {% endfor %}
+</div>
+</body>
+</html>
+{% endblock %}

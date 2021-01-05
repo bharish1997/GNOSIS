@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+        padding-bottom: 10px;
+    }
+    .signup{
+        display: block;
+    }
+</style>
+
+</head>
+
+<body>
+<div class="container-lg-1" style="background-color: darkslateblue;padding:10px">
+<div class="container">
+    <div class="d-flex justify-content-center" >
+        <a href="/" style="color: white;font-weight: bolder">HOME</a>
+    </div>
+</div>
+</div>
+    <div class="signup">
+        <div class="container"><br>
+    <div class="d-flex justify-content-center">Already have account.</div>
+    <div class="d-flex justify-content-center"><button type="button" class="btn btn-primary" onclick="redirect('studentlogin')">Login</button></div>
+<br>
+
+<div class="container">
+    <div class="d-flex justify-content-center">or</div>
+    <div class="d-flex justify-content-center" style="font-weight: bolder;font-size: 22px">Sign Up</div>
+    <form method="post" enctype="multipart/form-data" class="col-20 justify-content-center">
+    {% csrf_token %}
+            <style>
+                .col{
+                    font-weight: bolder;
+                }
+            </style>
+            <div class="col">{{ form.first_name|as_crispy_field }}</div>
+            <div class="col">{{ form.last_name|as_crispy_field }}</div>
+            <div class="col">{{ form.age|as_crispy_field }}</div>
+            <div class="col">{{ form.gender|as_crispy_field }}</div>
+        <div class="col">{{ form.username|as_crispy_field }}</div>
+        <div class="col">{{ form.password|as_crispy_field }}</div>
+        <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary align-self-center" onclick="redirect('studentlogin')">SUBMIT</button></div>
+        {{ user.as_p }}
+    </form>
+</div>
+    </div>
+
+</div>
+
+    <script>
+    function redirect(url) {
+        window.open(url,"_self");
+    }
+</script>
+
+</body>
+</html>
+{% endblock %}
